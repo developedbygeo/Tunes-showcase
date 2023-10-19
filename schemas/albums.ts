@@ -40,9 +40,9 @@ const albums = {
               validation: (Rule: Rule) => Rule.required(),
             },
             {
-              name: 'src',
-              title: 'Source',
-              type: 'url',
+              name: 'track',
+              title: 'Track',
+              type: 'file',
               validation: (Rule: Rule) => Rule.required(),
             },
           ],
