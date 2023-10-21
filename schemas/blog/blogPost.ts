@@ -7,6 +7,12 @@ const blogPost = {
   type: 'document',
   fields: [
     {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: 'id',
       title: 'ID',
       type: 'string',
@@ -64,8 +70,9 @@ const blogPost = {
       description: 'description',
     },
     prepare: (selection: BlogPostSelection) => {
-      const { author } = selection;
-      return { ...selection, subtitle: author && `by ${author}` };
+      const { author, date } = selection;
+      const ddmmyyyy = new Date(date).toLocaleDateString('en-GB');
+      return { ...selection, subtitle: author && `by ${author} - ${ddmmyyyy}` };
     },
   },
 };
