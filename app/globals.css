@@ -7,3 +7,33 @@
         @apply bg-gradient-background font-sans text-gray-200;
     }
 }
+
+@layer components {
+    .section {
+        @apply py-12 xl:py-24;
+    }
+
+    .big-title {
+        @apply font-anton text-accent text-4xl leading-none;
+    }
+
+    .subtitle {
+        @apply text-lg font-semibold leading-tight xl:text-xl;
+    }
+}
+
+@layer utilities {
+    .c-scrollbar {
+        @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-gray-700;
+    }
+
+    .apply-pb {
+        @apply pb-14 xl:pb-28;
+    }
+    .apply-pt {
+        @apply pt-14 xl:pt-28;
+    }
+    .apply-py {
+        @apply py-14 xl:py-28;
+    }
+}
