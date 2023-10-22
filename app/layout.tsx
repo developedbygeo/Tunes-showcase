@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
-import { Abril_Fatface, Montserrat } from 'next/font/google';
+import { Anton, Montserrat } from 'next/font/google';
 
 import './globals.css';
-import Header from '@/modules/Header';
-import Footer from '@/modules/Footer';
 import { cn } from '@/libs/utils';
 import { WithChildren } from '@/types/UI';
 
-const abril = Abril_Fatface({
+import Header from '@/components/modules/Header';
+import Footer from '@/components/modules/Footer';
+
+const anton = Anton({
     weight: ['400'],
     subsets: ['latin'],
-    variable: '--font-abril',
+    variable: '--font-anton',
 });
 
 const montserrat = Montserrat({
@@ -27,7 +28,13 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: WithChildren) => {
     return (
         <html lang="en">
-            <body className={cn(abril.variable, montserrat.variable)}>
+            <body
+                className={cn(
+                    anton.variable,
+                    montserrat.variable,
+                    'scrollbar-thumb-accent/50 overflow-x-hidden scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-rounded-xl'
+                )}
+            >
                 <Header />
                 {children}
                 <Footer />
