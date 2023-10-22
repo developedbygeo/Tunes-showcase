@@ -2,6 +2,7 @@ import { groq } from 'next-sanity';
 
 export const eventsQuery = groq`*[_type == "event"]{
     _id,
+    _createdAt,
     date {
         day,
         month
@@ -12,7 +13,7 @@ export const eventsQuery = groq`*[_type == "event"]{
         address
     },
     price
-}`;
+} | order(dateTime(_createdAt) asc)`;
 
 export const albumsQuery = groq`*[_type == "album"]{
     _id,
