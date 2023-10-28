@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './styles/heroPlayer.css';
+
 @layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
     body {
         @apply bg-gradient-background font-sans text-gray-200;
     }
@@ -14,7 +20,7 @@
     }
 
     .big-title {
-        @apply font-anton text-accent text-4xl leading-none;
+        @apply font-anton text-4xl leading-none text-accent;
     }
 
     .subtitle {
@@ -35,5 +41,16 @@
     }
     .apply-py {
         @apply py-14 xl:py-28;
+    }
+
+    .hover-link-effect {
+        @apply relative text-gray-200 transition-colors duration-200 before:absolute before:-bottom-2 before:right-0 before:h-[0.1rem] before:w-0 before:rounded-sm before:bg-gray-200 hover:text-gray-100 hover:before:left-0 hover:before:w-full;
+    }
+
+    .hover-link-effect::before {
+        transition:
+            right 0.4s,
+            width 0.4s,
+            left 0.4s;
     }
 }
