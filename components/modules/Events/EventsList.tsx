@@ -28,12 +28,12 @@ const EventsList = ({ className, data }: EventsListProps) => {
             animate={isInView ? 'visible' : 'hidden'}
             whileInView="visible"
             viewport={{ once: true }}
-            className={cn('flex flex-col justify-between gap-x-4 xl:h-full xl:flex-row', className)}
+            className="flex h-[35rem] flex-col justify-between gap-x-4 overflow-y-auto xl:flex-row"
         >
             <div className="hidden w-[22rem] xl:flex">
                 <Image src="/tour.jpg" width={358} height={489} priority quality={100} alt="DJ Cat Paws on tour" />
             </div>
-            <ul className="c-scrollbar flex h-[35rem] w-80 flex-1 flex-col justify-between overflow-auto scroll-smooth shadow-container-neumorph">
+            <ul className="c-scrollbar flex w-80 flex-1 flex-col justify-between overflow-y-auto scroll-smooth shadow-container-neumorph">
                 {data.map((event) => (
                     <li
                         className="flex flex-col items-center justify-between gap-y-4 border-b border-white/10 px-0 py-8 text-center xl:my-0 xl:flex-row xl:gap-y-0 xl:px-6 xl:py-10 xl:text-left"
@@ -47,8 +47,9 @@ const EventsList = ({ className, data }: EventsListProps) => {
                                 <p className="font-anton text-3xl font-bold">{event.date.day}</p>
                                 <p className="text-lg">{event.date.month}</p>
                             </time>
+
                             <article className="flex w-64 flex-col justify-start gap-y-2">
-                                <h3 className="sr-only">Location: {event.location.city}</h3>
+                                <h3 className="sr-only h-0">Location: {event.location.city}</h3>
                                 <p className="text-lg font-bold leading-none xl:whitespace-nowrap">
                                     {event.location.city}, {event.location.country}
                                 </p>
