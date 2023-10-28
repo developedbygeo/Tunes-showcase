@@ -24,6 +24,8 @@ module.exports = {
             boxShadow: {
                 'container-neumorph':
                     '-0.5rem -0.625rem 2.5rem -0.3125rem rgba(150, 190, 231, 0.15), 0.5rem 0.625rem 2.5rem 0.3125rem rgba(10, 10, 10, 0.7);',
+                'container-neumorph-sm':
+                    '-0.5rem -0.625rem 2.5rem -0.3125rem rgba(150, 190, 231, 0.1), 0.5rem 0.625rem 2.5rem 0.3125rem rgba(10, 10, 10, 0.3);',
             },
             fontFamily: {
                 sans: ['var(--font-montserrat)', ...defaultTheme.fontFamily.sans],
