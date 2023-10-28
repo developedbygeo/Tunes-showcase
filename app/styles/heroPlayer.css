@@ -1,0 +1,53 @@
+.rap-progress {
+    @apply !bg-accent;
+}
+
+.rap-pin {
+    @apply !bg-gray-200;
+}
+
+.rap-container .rap-slider .rap-progress .rap-pin {
+    @apply bg-gray-200;
+}
+
+.rap-container .rap-slider .rap-progress .rap-pin:hover {
+    @apply scale-[1.2] transition-all duration-300;
+}
+
+.rap-container {
+    @apply !shadow-container-neumorph-sm w-full !max-w-[initial];
+}
+
+.rap-container .rap-pp-button svg {
+    @apply w-5;
+}
+
+.rap-container .rap-volume .rap-volume-btn svg {
+    @apply w-5;
+}
+
+.rap-container .rap-pp-button svg path,
+.rap-container .rap-volume .rap-volume-btn svg path {
+    @apply fill-accent;
+}
+
+.rap-current-time,
+.rap-total-time {
+    @apply font-sans text-sm font-medium;
+}
+
+.rap-container .rap-slider {
+    @apply !h-1 !bg-gray-500;
+}
+
+.rap-container .rap-controls span {
+    @apply text-sm;
+}
+
+.rap-volume-btn.rap-volume-open svg path {
+    @apply fill-white;
+}
+
+.rap-volume-controls {
+    @apply !bg-transparent;
+}
