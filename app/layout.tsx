@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Anton, Montserrat } from 'next/font/google';
 
 import './globals.css';
-import { cn } from '@/libs/utils';
+import { cn } from '@/libs/ui';
 import { WithChildren } from '@/types/UI';
 
 import Header from '@/components/modules/Header';
@@ -32,7 +32,7 @@ const RootLayout = ({ children }: WithChildren) => {
                 className={cn(
                     anton.variable,
                     montserrat.variable,
-                    'scrollbar-thumb-accent/50 overflow-x-hidden scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-rounded-xl'
+                    'overflow-x-hidden scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-accent/50 scrollbar-thumb-rounded-xl'
                 )}
             >
                 <Header />
