@@ -1,12 +1,12 @@
+import { HeaderData } from '@/types/sanity';
+import AnimatedNavLinks from '@/components/modules/AnimatedNavLinks';
 import { getHeader } from '@/libs/sanity/utils';
-import AnimatedHeader from '@/components/modules/AnimatedHeader';
 
 const Header = async () => {
-    const headerData = await getHeader();
-    console.log(headerData.navigation[0]);
+    const data = await getHeader();
     return (
         <header>
-            <AnimatedHeader links={headerData.navigation} src={headerData.logo} />
+            <AnimatedNavLinks links={data.navigation} src={data.logo} />
         </header>
     );
 };
