@@ -18,8 +18,14 @@ module.exports = {
             colors: {
                 accent: '#7987FF',
             },
+            textShadow: {
+                '2xl': '1px 1px 5px rgb(33 34 43 / 20%)',
+                '3xl': '0 0 3px rgba(0, 0, 0, .8), 0 0 5px rgba(0, 0, 0, .9)',
+                'hero-header': '1px 1px 5px rgba(121,135,255,1)',
+            },
             backgroundImage: {
                 'gradient-background': 'linear-gradient(to top, #191B1F, #26292E)',
+                'gradient-container': 'linear-gradient(to bottom, #26292E, #191B1F)',
             },
             boxShadow: {
                 'container-neumorph':
@@ -62,5 +68,6 @@ module.exports = {
         require('tailwindcss-animate'),
         require('tailwindcss-fluid-type'),
         require('tailwind-scrollbar')({ nocompatible: true }),
+        require('tailwindcss-textshadow'),
     ],
 };
