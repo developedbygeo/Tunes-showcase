@@ -19,6 +19,7 @@ const customDeskStructure = () =>
                                     S.documentTypeListItem('hero').title('Hero').icon(deskIcons.general.hero),
                                     S.documentTypeListItem('event').title('Events').icon(deskIcons.general.events),
                                     S.documentTypeListItem('album').title('Albums').icon(deskIcons.general.albums),
+                                    S.documentTypeListItem('footer').title('Footer').icon(deskIcons.general.footer),
                                 ])
                         ),
                     S.listItem()
