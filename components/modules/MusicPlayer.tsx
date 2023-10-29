@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { AudioPlayer } from 'react-audio-play';
 import { motion } from 'framer-motion';
+import AudioPlayer from 'react-h5-audio-player';
+
 import { fadeIn } from '@/libs/animations';
 import { WithClassName, WithSource } from '@/types/UI';
 import { cn } from '@/libs/ui';
@@ -36,14 +37,13 @@ const Player = ({ className, src, trackImageSrc }: PlayerProps) => {
                     <div className="w-full max-w-4xl">
                         <AudioPlayer
                             src={src}
-                            loop
-                            preload="none"
-                            color="#fff"
-                            volume={40}
-                            volumePlacement="top"
+                            showSkipControls={false}
+                            showJumpControls={false}
+                            timeFormat="mm:ss"
+                            showFilledVolume
+                            layout="horizontal"
+                            className="w-80"
                             style={{
-                                background: 'transparent',
-                                boxShadow: 'none',
                                 width: '100%',
                             }}
                         />

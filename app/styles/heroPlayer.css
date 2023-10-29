@@ -1,53 +1,33 @@
-.rap-progress {
-    @apply !bg-accent;
+@import 'react-h5-audio-player/lib/styles.css';
+
+.rhap_container {
+    @apply bg-transparent;
 }
 
-.rap-pin {
-    @apply !bg-gray-200;
+.rhap_progress-filled,
+.rhap_volume-filled {
+    @apply bg-accent;
 }
 
-.rap-container .rap-slider .rap-progress .rap-pin {
-    @apply bg-gray-200;
+.rhap_progress-indicator,
+.rhap_volume-indicator {
+    @apply scale-100 bg-gray-200 transition-transform duration-300 hover:scale-105;
 }
 
-.rap-container .rap-slider .rap-progress .rap-pin:hover {
-    @apply scale-[1.2] transition-all duration-300;
+.rhap_download-progress,
+.rhap_volume-bar {
+    @apply bg-gray-300;
 }
 
-.rap-container {
-    @apply !shadow-container-neumorph-sm w-full !max-w-[initial];
+.rhap_button-clear {
+    @apply text-accent;
 }
 
-.rap-container .rap-pp-button svg {
-    @apply w-5;
+.rhap_current-time,
+.rhap_total-time {
+    @apply text-sm font-medium text-white;
 }
 
-.rap-container .rap-volume .rap-volume-btn svg {
-    @apply w-5;
-}
-
-.rap-container .rap-pp-button svg path,
-.rap-container .rap-volume .rap-volume-btn svg path {
-    @apply fill-accent;
-}
-
-.rap-current-time,
-.rap-total-time {
-    @apply font-sans text-sm font-medium;
-}
-
-.rap-container .rap-slider {
-    @apply !h-1 !bg-gray-500;
-}
-
-.rap-container .rap-controls span {
-    @apply text-sm;
-}
-
-.rap-volume-btn.rap-volume-open svg path {
-    @apply fill-white;
-}
-
-.rap-volume-controls {
-    @apply !bg-transparent;
+.rhap_additional-controls {
+    @apply hidden;
 }
