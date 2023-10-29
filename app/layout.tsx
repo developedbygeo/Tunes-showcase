@@ -6,7 +6,6 @@ import { cn } from '@/libs/ui';
 import { WithChildren } from '@/types/UI';
 
 import Header from '@/components/modules/Header';
-import Footer from '@/components/modules/Footer';
 
 const anton = Anton({
     weight: ['400'],
@@ -32,12 +31,12 @@ const RootLayout = ({ children }: WithChildren) => {
                 className={cn(
                     anton.variable,
                     montserrat.variable,
-                    'overflow-x-hidden scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-accent/50 scrollbar-thumb-rounded-xl'
+                    'min-h-screen overflow-x-hidden scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-accent/50 scrollbar-thumb-rounded-xl'
                 )}
             >
+                <h1 className="sr-only">Dj Cat Paws Portfolio</h1>
                 <Header />
-                {children}
-                <Footer />
+                <main>{children}</main>
             </body>
         </html>
     );
