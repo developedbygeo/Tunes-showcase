@@ -22,7 +22,7 @@ const Hero = ({ data, className }: HeroProps) => {
     const sequence = generateSequenceFromArray(cleanHeroLocations, SEQUENCE_DELAY);
 
     return (
-        <section className={cn('container h-[80vh] xl:h-[85vh]', className)} id="home">
+        <section className={cn('container flex h-[80vh] flex-col justify-between xl:h-[90vh]', className)}>
             <h2 className="sr-only">Dj Cat Paws is here!</h2>
             <div className="flex h-full items-center justify-center xl:justify-start">
                 <article>
