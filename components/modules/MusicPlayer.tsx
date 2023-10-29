@@ -5,6 +5,7 @@ import { AudioPlayer } from 'react-audio-play';
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/libs/animations';
 import { WithClassName, WithSource } from '@/types/UI';
+import { cn } from '@/libs/ui';
 
 type PlayerProps = WithClassName &
     WithSource & {
@@ -15,12 +16,10 @@ const Player = ({ className, src, trackImageSrc }: PlayerProps) => {
     return (
         <>
             <motion.section
-                variants={fadeIn('up', 1.2)}
+                variants={fadeIn('up', 0.65)}
                 initial="hidden"
                 animate="visible"
-                whileInView={'visible'}
-                viewport={{ once: true, amount: 0.7 }}
-                className="relative z-40 flex items-center backdrop-blur-md"
+                className={cn('relative z-40 flex items-center backdrop-blur-md', className)}
             >
                 <h3 className="sr-only">Get a puurfect taste of the music</h3>
                 <div className="container mx-auto flex flex-col items-center justify-between px-0 xl:flex-row">
