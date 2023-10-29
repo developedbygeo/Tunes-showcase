@@ -1,5 +1,6 @@
 import {
     MdStream,
+    MdBuild,
     MdOutlineCatchingPokemon,
     MdViewModule,
     MdEvent,
@@ -17,6 +18,7 @@ const deskIcons = {
         hero: MdOutlineCatchingPokemon,
         events: MdEvent,
         albums: MdAlbum,
+        footer: MdBuild,
     },
     blog: {
         icon: MdCollectionsBookmark,
