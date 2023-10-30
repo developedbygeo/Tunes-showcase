@@ -34,7 +34,7 @@ const Player = ({ className, src, trackImageSrc }: PlayerProps) => {
                             <p className="text-sm font-light">Weekend</p>
                         </article>
                     </div>
-                    <div className="w-full max-w-4xl">
+                    <div className="bg-gradient-container shadow-container-neumorph-sm w-full max-w-4xl px-6 py-2">
                         <AudioPlayer
                             src={src}
                             showSkipControls={false}
