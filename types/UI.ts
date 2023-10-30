@@ -6,4 +6,8 @@ export type WithChildren = {
     children?: React.ReactNode;
 };
 
-export type AnimationDirection = 'up' | 'down' | 'left' | 'right';
+export type WithSource = {
+    src: string;
+};
+
+export type AnimationDirection = 'up' | 'down' | 'left' | 'right' | 'default';
