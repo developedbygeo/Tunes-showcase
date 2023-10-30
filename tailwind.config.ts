@@ -38,6 +38,10 @@ module.exports = {
                 anton: ['var(--font-anton)', ...defaultTheme.fontFamily.sans],
             },
             keyframes: {
+                spinning: {
+                    from: { transform: 'rotate(0deg)' },
+                    to: { transform: 'rotate(360deg)' },
+                },
                 'accordion-down': {
                     from: { height: 0 },
                     to: { height: 'var(--radix-accordion-content-height)' },
@@ -61,6 +65,7 @@ module.exports = {
                 bubble: 'bubble-bounce 8s ease-in-out infinite alternate',
                 'bubble-mid': 'bubble-bounce 12s ease-in-out infinite alternate',
                 'bubble-slow': 'bubble-bounce 22s linear infinite',
+                spinning: 'spinning 4s linear infinite',
             },
         },
     },
