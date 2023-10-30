@@ -5,6 +5,7 @@ import {
     MdViewModule,
     MdEvent,
     MdAlbum,
+    MdMusicNote,
     MdOutlineCategory,
     MdCollectionsBookmark,
     MdOutlineModeEdit,
@@ -18,6 +19,7 @@ const deskIcons = {
         hero: MdOutlineCatchingPokemon,
         events: MdEvent,
         albums: MdAlbum,
+        musicDescription: MdMusicNote,
         footer: MdBuild,
     },
     blog: {
