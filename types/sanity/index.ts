@@ -37,6 +37,21 @@ export type Album = {
     }[];
 };
 
+export type AlbumDescription = {
+    horizontalImg: string;
+    verticalImg1: string;
+    verticalImg2: string;
+    subtitle: string;
+    title: string;
+    description: string;
+    features: {
+        _key: string;
+        title: string;
+        description: string;
+        icon: string;
+    }[];
+};
+
 export type HeroLocation = {
     locationName: string;
     id: string;
