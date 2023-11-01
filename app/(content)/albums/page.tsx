@@ -1,13 +1,15 @@
+import AlbumsDescription from '@/components/modules/Albums/AlbumsDescription';
 import AlbumsHero from '@/components/modules/Albums/AlbumsHero';
-import { getAlbums } from '@/libs/sanity/utils';
+import { getAlbums, getAlbumsDescription } from '@/libs/sanity/utils';
 
 const Albums = async () => {
-    const albumData = await getAlbums();
+    const albumDescriptionData = await getAlbumsDescription();
 
     return (
         <>
             <div className="min-h-screen">
-                <AlbumsHero />
+                <AlbumsHero className="apply-pb min-h-screen" />
+                <AlbumsDescription data={albumDescriptionData} className="apply-py" />
             </div>
         </>
     );
