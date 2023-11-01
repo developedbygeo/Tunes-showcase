@@ -1,7 +1,14 @@
 import { createClient, groq } from 'next-sanity';
 
-import { Album, Event, FooterData, HeaderData, HeroData } from '@/types/sanity';
-import { albumsQuery, eventsQuery, footerQuery, headerQuery, heroQuery } from '@/libs/sanity/queries';
+import { Album, AlbumDescription, Event, FooterData, HeaderData, HeroData } from '@/types/sanity';
+import {
+    albumsDescriptionQuery,
+    albumsQuery,
+    eventsQuery,
+    footerQuery,
+    headerQuery,
+    heroQuery,
+} from '@/libs/sanity/queries';
 
 const sanityClient = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -32,5 +39,10 @@ export const getEvents = async (): Promise<Event[]> => {
 
 export const getAlbums = async (): Promise<Album[]> => {
     const albumData = await sanityClient.fetch(albumsQuery);
+    return albumData;
+};
+
+export const getAlbumsDescription = async (): Promise<AlbumDescription> => {
+    const albumData = await sanityClient.fetch(albumsDescriptionQuery);
     return albumData;
 };
