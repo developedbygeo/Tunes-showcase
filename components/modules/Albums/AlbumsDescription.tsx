@@ -25,16 +25,31 @@ const AlbumsDescription = ({ className, data }: AlbumDescriptionProps) => {
             animate={isInView ? 'visible' : 'hidden'}
             whileInView="visible"
             viewport={{ once: true }}
-            className={cn('relative grid grid-cols-3 overflow-hidden py-24 sm:py-32', className)}
+            className={cn('relative overflow-hidden px-0 py-24 sm:my-32', className)}
         >
-            <div className="container col-span-2 ml-auto mr-0 lg:px-0">
+            <motion.div
+                variants={fadeIn('left', 1.5)}
+                initial="hidden"
+                animate="visible"
+                className="group absolute right-0 top-0 h-full w-2/5"
+            >
+                <Image
+                    src={data.horizontalImg}
+                    alt="Party"
+                    className="h-full w-full"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                />
+            </motion.div>
+
+            <div className="container relative z-10 px-0">
                 <motion.div
                     variants={fadeIn('right', 1.5)}
                     initial="hidden"
                     animate="visible"
-                    className="lg:pr-8 lg:pt-4"
+                    className="w-3/5 lg:pr-8 lg:pt-4"
                 >
-                    <div className="container mr-20">
+                    <div className="">
                         <h2 className="text-base font-semibold leading-7 text-accent">{data.subtitle}</h2>
                         <p className="mt-2 text-3xl font-bold tracking-tight text-white text-shadow-hero-header sm:text-4xl">
                             {data.title}
@@ -63,20 +78,6 @@ const AlbumsDescription = ({ className, data }: AlbumDescriptionProps) => {
                     </div>
                 </motion.div>
             </div>
-            <motion.div
-                variants={fadeIn('left', 1.5)}
-                initial="hidden"
-                animate="visible"
-                className="relative h-full w-full"
-            >
-                <Image
-                    src={data.horizontalImg}
-                    alt="Party"
-                    className="h-full w-full"
-                    fill
-                    style={{ objectFit: 'cover' }}
-                />
-            </motion.div>
         </motion.section>
     );
 };
