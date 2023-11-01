@@ -28,6 +28,17 @@ export const fadeIn = (direction: AnimationDirection, delay: number) => ({
     },
 });
 
+export const fadeInWithRotation = (direction: AnimationDirection, delay: number, rotation: number) => ({
+    hidden: {
+        ...fadeIn(direction, delay).hidden,
+        rotate: rotation,
+    },
+    visible: {
+        ...fadeIn(direction, delay).visible,
+        rotate: 0,
+    },
+});
+
 export const fadeInChildren = (direction: AnimationDirection, delay: number, childrenDelay: number) => {
     const fadeEffect = fadeIn(direction, delay);
     return {
