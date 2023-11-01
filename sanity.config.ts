@@ -10,6 +10,7 @@ export default defineConfig({
 
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
     dataset: 'production',
+    useCdn: true,
 
     plugins: [customDeskStructure(), visionTool()],
     basePath: '/studio',
