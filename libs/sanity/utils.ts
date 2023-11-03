@@ -4,11 +4,13 @@ import { Album, AlbumDescription, Event, FooterData, HeaderData, HeroData } from
 import {
     albumsDescriptionQuery,
     albumsQuery,
+    biographyQuery,
     eventsQuery,
     footerQuery,
     headerQuery,
     heroQuery,
 } from '@/libs/sanity/queries';
+import BiographyData from '@/types/sanity/biography';
 
 const sanityClient = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -45,4 +47,9 @@ export const getAlbums = async (): Promise<Album[]> => {
 export const getAlbumsDescription = async (): Promise<AlbumDescription> => {
     const albumData = await sanityClient.fetch(albumsDescriptionQuery);
     return albumData;
+};
+
+export const getBiography = async (): Promise<BiographyData> => {
+    const biographyData = await sanityClient.fetch(biographyQuery);
+    return biographyData;
 };
