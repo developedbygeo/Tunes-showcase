@@ -10,6 +10,7 @@ import {
     MdCollectionsBookmark,
     MdOutlineModeEdit,
     MdNewspaper,
+    MdOutlineBiotech,
 } from 'react-icons/md';
 
 const deskIcons = {
@@ -19,6 +20,7 @@ const deskIcons = {
         hero: MdOutlineCatchingPokemon,
         events: MdEvent,
         albums: MdAlbum,
+        biography: MdOutlineBiotech,
         musicDescription: MdMusicNote,
         footer: MdBuild,
     },
