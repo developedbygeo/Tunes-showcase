@@ -77,7 +77,7 @@ export const albumsQuery = groq`*[_type == "album"]{
     }
   }`;
 
-export const musicDescriptionQuery = groq`*[_type == "musicDescription"]{
+export const albumsDescriptionQuery = groq`*[_type == "musicDescription"]{
   _id,
   "horizontalImg": imgHorizontal.asset->url,
   "verticalImg1": imgVertical1.asset->url,
@@ -86,8 +86,32 @@ export const musicDescriptionQuery = groq`*[_type == "musicDescription"]{
   title,
   description,
   features[]{
+    _key,
     title,
     description,
     "icon": icon.asset->url
 }
-}`;
+}[0]`;
+
+export const biographyQuery = groq`
+*[_type == "bio"]{
+  _id,
+  name,
+  "mainImage": mainImage.asset->url,
+  bioText,
+  specializations,
+  experiences[]{
+    title,
+    description,
+    duration
+  },
+  skills[]{
+    title,
+    level
+  },
+  education[]{
+    degree,
+    institution,
+    year
+  }
+}[0]`;
