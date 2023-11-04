@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './styles/heroPlayer.css';
+@import './styles/portableText.css';
 
 @layer base {
     html {

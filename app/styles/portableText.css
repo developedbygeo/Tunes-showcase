@@ -1,0 +1,7 @@
+.portable-text em {
+    @apply my-2 block text-gray-200;
+}
+
+.portable-text > p {
+    @apply mt-6 text-base !leading-relaxed text-gray-300;
+}
