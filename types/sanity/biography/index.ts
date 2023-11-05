@@ -4,36 +4,34 @@ type Image = {
     };
 };
 
-type Specialization = {
+export type Experience = {
     _key: string;
     title: string;
-};
-
-type Experience = {
-    _key: string;
-    title: string;
+    location: string;
+    timeFrame: string;
     description: string;
-    period: string;
+    duration: string;
 };
 
-type Skill = {
+export type Skill = {
     _key: string;
     title: string;
-    proficiency: string;
+    level: number;
 };
 
-type Education = {
+export type Education = {
     _key: string;
     institution: string;
     degree: string;
-    fieldOfStudy: string;
-    period: string;
+    year: Date;
 };
 
 type BiographyData = {
     bioText: any[];
-    image: Image;
-    specializations: Specialization[];
+    headline: string;
+    fullName: string;
+    mainImage: string;
+    specializations: string[];
     experiences: Experience[];
     skills: Skill[];
     education: Education[];
