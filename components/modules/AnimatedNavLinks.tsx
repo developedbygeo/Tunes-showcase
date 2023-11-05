@@ -53,7 +53,11 @@ const AnimatedNavLinks = ({ className, src, links, quote }: AnimatedHeaderProps)
                 <h2 className="sr-only">Navigation</h2>
                 {links.map((link) => (
                     <motion.div className="hover-link-effect" key={link._key} variants={simpleFadeInNoDirection()}>
-                        <NavLink className="px-4 py-2" href={link.navigationLinkTitle.href}>
+                        <NavLink
+                            activeClassName="text-accent"
+                            className="px-4 py-2"
+                            href={link.navigationLinkTitle.href}
+                        >
                             {link.navigationLinkTitle.title}
                         </NavLink>
                     </motion.div>
