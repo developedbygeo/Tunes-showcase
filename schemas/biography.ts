@@ -46,16 +46,31 @@ const biography = {
                             name: 'title',
                             title: 'Title',
                             type: 'string',
+                            validation: (Rule: Rule) => Rule.required(),
+                        },
+                        {
+                            name: 'location',
+                            title: 'Location',
+                            type: 'string',
+                            validation: (Rule: Rule) => Rule.required(),
+                        },
+                        {
+                            name: 'timeFrame',
+                            title: 'Time Frame',
+                            type: 'string',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                         {
                             name: 'description',
                             title: 'Description',
                             type: 'text',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                         {
                             name: 'duration',
                             title: 'Duration',
                             type: 'string',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                     ],
                 },
@@ -65,7 +80,20 @@ const biography = {
             name: 'skills',
             title: 'Skills',
             type: 'array',
-            of: [{ type: 'string' }],
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'title', title: 'Title', type: 'string', validation: (Rule: Rule) => Rule.required() },
+                        {
+                            name: 'level',
+                            title: 'Level',
+                            type: 'number',
+                            validation: (Rule: Rule) => Rule.required().min(0).max(100),
+                        },
+                    ],
+                },
+            ],
         },
         {
             name: 'education',
@@ -76,19 +104,28 @@ const biography = {
                     type: 'object',
                     fields: [
                         {
+                            name: 'image',
+                            title: 'Image',
+                            type: 'image',
+                            validation: (Rule: Rule) => Rule.required(),
+                        },
+                        {
                             name: 'degree',
                             title: 'Degree',
                             type: 'string',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                         {
                             name: 'institution',
                             title: 'Institution',
                             type: 'string',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                         {
                             name: 'year',
                             title: 'Year',
-                            type: 'string',
+                            type: 'date',
+                            validation: (Rule: Rule) => Rule.required(),
                         },
                     ],
                 },

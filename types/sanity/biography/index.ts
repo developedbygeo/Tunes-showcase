@@ -22,6 +22,7 @@ export type Skill = {
 export type Education = {
     _key: string;
     institution: string;
+    image: string;
     degree: string;
     year: Date;
 };
