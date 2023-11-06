@@ -72,3 +72,29 @@ export const simpleFadeInNoDirection = () => ({
         },
     },
 });
+
+export const carouselImageFade = {
+    hidden: (direction: number) => {
+        return {
+            x: direction > 0 ? 1000 : -1000,
+            opacity: 0,
+        };
+    },
+    visible: {
+        zIndex: 1,
+        x: 0,
+        opacity: 1,
+        transition: {
+            type: 'tween',
+            duration: 0.75,
+            ease: [0.25, 0.6, 0.3, 0.8],
+        },
+    },
+    exit: (direction: number) => {
+        return {
+            zIndex: 0,
+            x: direction < 0 ? 1000 : -1000,
+            opacity: 0,
+        };
+    },
+};
