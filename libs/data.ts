@@ -5,3 +5,5 @@ export const generateSequenceFromArray = (array: (string | number)[] | undefined
         return [item, delay];
     });
 };
+
+export const extractYearFromDate = (date: Date) => new Date(date).getFullYear();
