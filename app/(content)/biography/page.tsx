@@ -5,6 +5,7 @@ import TimelineSlider from '@/components/modules/Biography/EducationTimeline';
 import BiographyExperience from '@/components/modules/Biography/BiographyExperience';
 import BiographyHero from '@/components/modules/Biography/BiographyHero';
 import BiographySkills from '@/components/modules/Biography/BiographySkills';
+import BiographyCarousel from '@/components/modules/Biography/BiographyCarousel';
 
 const Biography = async ({ className }: WithClassName) => {
     const data = await getBiography();
@@ -25,7 +26,7 @@ const Biography = async ({ className }: WithClassName) => {
                 <BiographyHero data={heroData} />
                 <BiographySkills className="apply-py" skills={data.skills} />
                 <BiographyExperience className="apply-pb" experience={data.experiences} />
-                <TimelineSlider className="apply-pb" education={data.education} />
+                <BiographyCarousel className="apply-pb" education={data.education} />
             </section>
         </>
     );
