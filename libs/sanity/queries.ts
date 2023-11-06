@@ -95,23 +95,29 @@ export const albumsDescriptionQuery = groq`*[_type == "musicDescription"]{
 
 export const biographyQuery = groq`
 *[_type == "bio"]{
-  _id,
-  name,
+  headline,
+  fullName,
   "mainImage": mainImage.asset->url,
   bioText,
   specializations,
   experiences[]{
+    _key,
     title,
+    location,
+    timeFrame,
     description,
     duration
   },
   skills[]{
+    _key,
     title,
     level
   },
   education[]{
+    _key,
     degree,
+    "image": image.asset->url,
     institution,
     year
-  }
+  } | order(year desc)
 }[0]`;
