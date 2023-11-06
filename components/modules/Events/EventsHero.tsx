@@ -24,7 +24,7 @@ const EventsHero = () => {
             animate="visible"
             className="relative flex h-[100vh] transition-all"
         >
-            <motion.div className="fixed left-1/2 top-1/2" style={{ scale, position, x: '-50%', y: '-50%' }}>
+            <motion.div className="fixed left-[43%] top-1/2" style={{ scale, position, x: '-50%', y: '-50%' }}>
                 <motion.h3 className="text-5xl font-semibold text-shadow-hero-header">
                     <span className="leading-loose">Are you ready to party with</span>
                     <div>
