@@ -7,3 +7,10 @@ export const generateSequenceFromArray = (array: (string | number)[] | undefined
 };
 
 export const extractYearFromDate = (date: Date) => new Date(date).getFullYear();
+
+export const parseDate = (date: string) =>
+    new Date(date).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
