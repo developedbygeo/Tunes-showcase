@@ -1,7 +1,6 @@
 import { getBiography } from '@/libs/sanity/utils';
 import { WithClassName } from '@/types/UI';
 
-import TimelineSlider from '@/components/modules/Biography/EducationTimeline';
 import BiographyExperience from '@/components/modules/Biography/BiographyExperience';
 import BiographyHero from '@/components/modules/Biography/BiographyHero';
 import BiographySkills from '@/components/modules/Biography/BiographySkills';
