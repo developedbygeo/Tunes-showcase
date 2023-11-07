@@ -32,7 +32,7 @@ const EventsHero = () => {
                         <span>?</span>
                     </div>
                 </motion.h3>
-                <p className="text-light text-300 mt-6 w-4/5 text-base text-gray-300">
+                <p className="mt-6 w-4/5 text-base text-gray-300">
                     Step into the fantastical world of DJ Cat Paws, where every beat is purr-fectly curated to whisk you
                     into a frenzy of feline fun. With a scratch of the deck and a meow into the mic. Are you ready to
                     pounce on the dance floor with DJ Cat Paws? Your whiskered maestro awaits!
