@@ -1,12 +1,14 @@
 import { createClient, groq } from 'next-sanity';
 
-import { Album, AlbumDescription, Event, FooterData, HeaderData, HeroData } from '@/types/sanity';
+import { Album, AlbumDescription, BlogPostData, Event, FooterData, HeaderData, HeroData } from '@/types/sanity';
 import {
     albumsDescriptionQuery,
     albumsQuery,
     biographyQuery,
+    blogPostsQuery,
     eventsQuery,
     footerQuery,
+    getBlogPostQuery,
     headerQuery,
     heroQuery,
 } from '@/libs/sanity/queries';
@@ -52,4 +54,15 @@ export const getAlbumsDescription = async (): Promise<AlbumDescription> => {
 export const getBiography = async (): Promise<BiographyData> => {
     const biographyData = await sanityClient.fetch(biographyQuery);
     return biographyData;
+};
+
+export const getBlogPosts = async (): Promise<BlogPostData[]> => {
+    const blogPostData = await sanityClient.fetch(blogPostsQuery);
+    return blogPostData;
+};
+
+export const getBlogPost = async (slug: string): Promise<BlogPostData> => {
+    const query = getBlogPostQuery(slug);
+    const blogPost = await sanityClient.fetch(query);
+    return blogPost;
 };
