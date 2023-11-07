@@ -95,6 +95,11 @@ export const carouselImageFade = {
             zIndex: 0,
             x: direction < 0 ? 1000 : -1000,
             opacity: 0,
+            transition: {
+                type: 'tween',
+                duration: 0.25,
+                ease: [0.45, 0.6, 0.3, 0.8],
+            },
         };
     },
 };
