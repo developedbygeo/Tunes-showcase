@@ -87,3 +87,16 @@ export type NavLinkType = {
         href: string;
     };
 };
+
+export type BlogPostData = {
+    _id: string;
+    image: string;
+    title: string;
+    description: string;
+    body: any;
+    author: string;
+    authorImage: string;
+    categories: string[];
+    slug: string;
+    publishedAt: string;
+};
