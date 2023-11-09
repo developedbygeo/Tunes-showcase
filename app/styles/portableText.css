@@ -5,3 +5,7 @@
 .portable-text > p {
     @apply mt-6 text-base !leading-relaxed text-gray-300;
 }
+
+.portable-text li {
+    @apply ml-6 list-item list-disc text-base !leading-relaxed !text-gray-300;
+}
