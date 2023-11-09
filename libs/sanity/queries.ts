@@ -121,3 +121,29 @@ export const biographyQuery = groq`
     year
   } | order(year desc)
 }[0]`;
+
+export const blogPostsQuery = groq`*[_type == "blogPost"]{
+  _id,
+  title,
+  "image": image.asset->url,
+  "author": author->name,
+  "authorImage": author->image.asset->url,
+  "categories": categories[]->title,
+  "slug": slug.current,
+  publishedAt,
+  description,
+  body
+} | order(publishedAt desc)`;
+
+export const getBlogPostQuery = (slug: string) => groq`*[_type == "blogPost" && slug.current == "${slug}"]{
+  _id,
+  title,
+  "image": image.asset->url,
+  "author": author->name,
+  "authorImage": author->image.asset->url,
+  "categories": categories[]->title,
+  "slug": slug.current,
+  publishedAt,
+  description,
+  body
+}[0]`;
