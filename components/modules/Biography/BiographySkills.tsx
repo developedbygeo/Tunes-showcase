@@ -16,7 +16,7 @@ const BiographySkills = ({ className, skills }: BiographySkillsProps) => {
             <h2 className="mb-12 text-lg font-semibold">Skills</h2>
             <ul className="flex flex-wrap gap-12">
                 {skills.map((skill) => (
-                    <li className="flex flex-1 basis-1/3 flex-col gap-4" key={skill._key}>
+                    <li className="flex flex-1 basis-full flex-col gap-4 lg:basis-1/3" key={skill._key}>
                         <p className="text-base">{skill.title}</p>
                         <AnimatedSkillBar
                             className="bg-gradient-background !shadow-container-neumorph-sm"
