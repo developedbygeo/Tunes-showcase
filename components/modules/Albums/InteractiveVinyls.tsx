@@ -8,6 +8,7 @@ import Vinyl2 from '@/assets/vinyl2.svg';
 import Vinyl3 from '@/assets/vinyl3.svg';
 
 import { VINYL_ROTATION, fadeIn, fadeInChildren, fadeInWithRotation } from '@/libs/animations';
+import { cn } from '@/libs/ui';
 
 const InteractiveVinyls = ({ className }: WithClassName) => {
     return (
@@ -15,7 +16,7 @@ const InteractiveVinyls = ({ className }: WithClassName) => {
             variants={fadeInChildren('default', 0.1, 0.2)}
             initial="hidden"
             whileInView="visible"
-            className="relative h-[60vh] w-[30vw]"
+            className={cn('relative h-[60vh] w-[30vw]', className)}
         >
             <motion.div
                 variants={fadeInWithRotation('left', 0.45, 360)}
