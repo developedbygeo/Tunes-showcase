@@ -26,7 +26,7 @@ const Hero = ({ data, className }: HeroProps) => {
             <h2 className="sr-only">Dj Cat Paws is here!</h2>
             <div className="flex h-full items-center justify-center xl:justify-start">
                 <article>
-                    <ParallaxLogo src={data.heroLogo} className="-left-14" />
+                    <ParallaxLogo src={data.heroLogo} className="lg:-left-14" />
                     <Locations locations={sequence} className="flex" />
                     <HeroCta />
                 </article>
