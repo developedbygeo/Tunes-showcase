@@ -24,7 +24,10 @@ const EventsHero = () => {
             animate="visible"
             className="relative flex h-[100vh] transition-all"
         >
-            <motion.div className="fixed left-[43%] top-1/2" style={{ scale, position, x: '-50%', y: '-50%' }}>
+            <motion.div
+                className="fixed left-[60%] top-1/2 w-full lg:left-[43%] lg:w-fit"
+                style={{ scale, position, x: '-50%', y: '-50%' }}
+            >
                 <motion.h3 className="text-5xl font-semibold text-shadow-hero-header">
                     <span className="leading-loose">Are you ready to party with</span>
                     <div>
@@ -32,7 +35,7 @@ const EventsHero = () => {
                         <span>?</span>
                     </div>
                 </motion.h3>
-                <p className="mt-6 w-4/5 text-base text-gray-300">
+                <p className="mt-6 hidden w-4/5 text-base text-gray-300 lg:block">
                     Step into the fantastical world of DJ Cat Paws, where every beat is purr-fectly curated to whisk you
                     into a frenzy of feline fun. With a scratch of the deck and a meow into the mic. Are you ready to
                     pounce on the dance floor with DJ Cat Paws? Your whiskered maestro awaits!
