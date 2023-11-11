@@ -34,10 +34,10 @@ const BiographyCarousel = ({ className, education }: CarouselProps) => {
     };
 
     return (
-        <motion.div className={cn('container relative flex h-screen flex-col items-start justify-center', className)}>
+        <motion.div className={cn('container relative flex flex-col items-start justify-center', className)}>
             <h2 className="mb-12 text-lg font-semibold">Education & Festivals</h2>
 
-            <div className="container relative h-[60rem]">
+            <div className="container relative h-[50rem] lg:h-[60rem]">
                 <AnimatePresence initial={false} custom={direction}>
                     <motion.div
                         key={education[imageIndex]._key}
@@ -46,7 +46,7 @@ const BiographyCarousel = ({ className, education }: CarouselProps) => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        className="absolute z-20 h-[55rem] w-full"
+                        className="absolute z-20 h-[35rem] w-full lg:h-[55rem]"
                         drag="x"
                         dragConstraints={{ left: 0, right: 0 }}
                         dragElastic={1}
@@ -62,6 +62,7 @@ const BiographyCarousel = ({ className, education }: CarouselProps) => {
                         <Image
                             fill
                             priority
+                            blurDataURL={education[imageIndex].image}
                             alt="Party"
                             className="pointer-events-none"
                             src={education[imageIndex].image}
@@ -88,14 +89,14 @@ const BiographyCarousel = ({ className, education }: CarouselProps) => {
                 </AnimatePresence>
                 <Button
                     variant="ghost"
-                    className="absolute right-12 top-1/2 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white"
+                    className="absolute bottom-[10rem] right-12 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white lg:top-1/2"
                     onClick={() => paginate(1)}
                 >
                     <MdKeyboardArrowRight className="h-6 w-6 text-black" />
                 </Button>
                 <Button
                     variant="ghost"
-                    className="absolute left-12 top-1/2 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white"
+                    className="absolute bottom-[10rem] left-12 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white lg:top-1/2"
                     onClick={() => paginate(-1)}
                 >
                     <MdKeyboardArrowLeft className="h-6 w-6 text-black" />

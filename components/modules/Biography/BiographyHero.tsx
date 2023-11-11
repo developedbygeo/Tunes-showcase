@@ -5,6 +5,7 @@ import { WithClassName } from '@/types/UI';
 import { Skill } from '@/types/sanity/biography';
 
 import { Card } from '@/components/ui/Card';
+import { cn } from '@/libs/ui';
 
 type BiographyHeroProps = WithClassName & {
     data: {
@@ -17,13 +18,13 @@ type BiographyHeroProps = WithClassName & {
     };
 };
 
-const BiographyHero = ({ data }: BiographyHeroProps) => {
+const BiographyHero = ({ className, data }: BiographyHeroProps) => {
     return (
         <>
-            <section className="isolate overflow-hidden py-24 sm:py-32">
+            <section className={cn('isolate overflow-hidden', className)}>
                 <div className="relative w-full">
                     <Image
-                        className="absolute bottom-12 right-0"
+                        className="relative bottom-4 lg:absolute lg:bottom-12 lg:right-0"
                         src={data.imageUrl}
                         alt="DJ Cat Paws' selfie"
                         height={800}
@@ -40,7 +41,7 @@ const BiographyHero = ({ data }: BiographyHeroProps) => {
                     </div>
                 </div>
             </section>
-            <section className="container">
+            <section className="container px-4 lg:px-0">
                 <h2 className="mb-12 text-lg font-semibold">Specializations</h2>
                 <ul className="flex flex-wrap gap-12">
                     {data.specializations.map((spec, index) => (
