@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { cn } from '@/libs/ui';
@@ -14,8 +15,8 @@ const HeroCta = ({ className }: WithClassName) => (
         viewport={{ once: true, amount: 0.7 }}
         className={cn('mt-12 text-center xl:mt-8 xl:text-left', className)}
     >
-        <Button className="shadow-lg shadow-gray-900" size="xl">
-            Get Tickets
+        <Button asChild className="shadow-lg shadow-gray-900" size="xl">
+            <Link href="/events">Get Tickets</Link>
         </Button>
     </motion.div>
 );
