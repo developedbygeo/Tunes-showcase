@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tunes Showcase
 
-## Getting Started
+<!-- <div style="display: flex">
+<img src='./public/sample-v.png' height='450px' width='200px' alt='mobile viewport - portrait mode'/>&nbsp;&nbsp;
+&nbsp;&nbsp;<img style="align-self: center" src='./public/sample-h.png' height='350px' width='500px'alt='tablet viewport - landscape mode'/>
+</div> -->
 
-First, run the development server:
+<br>
+<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+A Next 13, fully responsive portfolio for a cat DJ, named DJ Cat Paws. Built to be different and creative, it features creative design, a music player, animations, and much more!
+
+Although it is a showcase project, it is built with scalability in mind. Featuring Sanity for content management, along with a custom desk setup, it features a fully functional blog, pricing section and the ability to expand it further.
+
+This project was a lovely opportunity to experiment further not only with Sanity, but also with building a creative UI with quite a few animations.
+
+Regarding the tooling, React Server Components, TypeScript, Framer Motion, Tailwind, and ShadCn are used among others. For a detailed overview, please have a look at the [**Features**](#features) & [**Tech**](#tech) section.
+
+<br>
+
+## Installation
+
+As this project was created with `create-next-app`, the following commands are available:
+
+**Install** the dependencies:
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the app in **development** mode:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br>
 
-## Learn More
+## <a id='features'></a>Features
 
-To learn more about Next.js, take a look at the following resources:
+-   Content Management (Sanity)
+-   Custom desk setup and icons
+-   Background & scroll animations
+-   A dynamic blog section
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## <a id='tech'></a>Tech
 
-## Deploy on Vercel
+-   NextJS 13
+-   TypeScript
+-   Sanity
+-   ShadCn
+-   Framer Motion
+-   Tailwind
+-   React Icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For a more detailed overview of the development & production dependencies, please check `package.json`.
