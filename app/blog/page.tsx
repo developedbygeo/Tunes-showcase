@@ -7,11 +7,11 @@ const Blog = async () => {
     const data = await getBlogPosts();
 
     return (
-        <section className="apply-py container">
+        <section className="apply-py container px-4 lg:px-0">
             <h2 className="text-5xl font-semibold tracking-tight text-white text-shadow-hero-header sm:text-6xl">
                 A deep dive into the world <span className="block text-accent">of DJ Cat Paws.</span>
             </h2>
-            <p className="mt-6 w-2/4 text-base text-gray-300">
+            <p className="mt-6 w-full text-base text-gray-300 lg:w-2/4">
                 Here you can find all the latest news about DJ Cat Paws. From new releases to upcoming events, our cat
                 DJ writes about it all.
             </p>
@@ -19,9 +19,9 @@ const Blog = async () => {
                 {data.map((post) => {
                     const publishedDate = parseDate(post.publishedAt);
                     return (
-                        <li className="group flex-1 basis-1/3" key={post._id}>
+                        <li className="group flex-1 basis-full lg:basis-1/3" key={post._id}>
                             <Link href={`/blog/${post.slug}`}>
-                                <div className="relative h-[30rem] w-full overflow-hidden">
+                                <div className="relative h-60 w-full overflow-hidden lg:h-[30rem]">
                                     <Image
                                         className="transition-transform duration-300 will-change-transform group-hover:scale-105"
                                         src={post.image}
@@ -30,7 +30,7 @@ const Blog = async () => {
                                         style={{ objectFit: 'contain' }}
                                     />
                                 </div>
-                                <div className="mt-6 flex w-full items-center justify-between">
+                                <div className="mt-6 flex w-full flex-col items-start justify-between gap-2 lg:flex-row lg:items-center lg:gap-0">
                                     <h3 className="font-semibold transition-colors duration-300 group-hover:text-accent">
                                         {post.title}
                                     </h3>
