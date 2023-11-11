@@ -9,7 +9,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
     if (!postData) return notFound();
 
     return (
-        <section className="apply-py container">
+        <section className="apply-py container px-4 lg:px-0">
             <h1 className="sr-only">{postData.title}</h1>
             <Post data={postData} />
         </section>
