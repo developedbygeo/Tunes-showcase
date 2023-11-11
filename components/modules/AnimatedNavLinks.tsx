@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useInView } from 'framer-motion';
 
+import { cn } from '@/libs/ui';
 import { fadeIn, fadeInChildren, simpleFadeInNoDirection } from '@/libs/animations';
 import { WithClassName, WithSource } from '@/types/UI';
 import { NavLinkType } from '@/types/sanity';
@@ -29,7 +30,7 @@ const AnimatedNavLinks = ({ className, src, links, quote }: AnimatedHeaderProps)
             animate={isInView ? 'visible' : 'hidden'}
             whileInView="visible"
             viewport={{ once: true }}
-            className="container flex items-center justify-between px-0 py-4"
+            className={cn('container flex items-center justify-between px-4 py-4 lg:px-0', className)}
         >
             <div className="flex items-center gap-6">
                 <motion.div
@@ -44,8 +45,10 @@ const AnimatedNavLinks = ({ className, src, links, quote }: AnimatedHeaderProps)
                 </motion.div>
                 {quote && <p className="text-sm font-light text-gray-400">{quote}</p>}
             </div>
+
+            {/* desktop */}
             <motion.nav
-                className="flex gap-12"
+                className="hidden lg:flex lg:gap-12"
                 variants={fadeInChildren('default', 0, 1)}
                 initial="hidden"
                 animate="visible"
