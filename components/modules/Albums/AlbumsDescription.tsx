@@ -18,8 +18,8 @@ const AlbumsDescription = ({ className, data }: AlbumDescriptionProps) => {
     const isInView = useInView(ref);
 
     return (
-        <section className={cn('relative overflow-hidden px-0 py-24 sm:my-32', className)}>
-            <div className="group absolute right-0 top-0 h-full w-2/5">
+        <section className={cn('relative flex flex-col gap-12 overflow-hidden px-0 py-24 sm:my-32', className)}>
+            <div className="group relative h-[50vh] w-full lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-2/5">
                 <Image
                     src={data.horizontalImg}
                     alt="Party"
@@ -30,7 +30,7 @@ const AlbumsDescription = ({ className, data }: AlbumDescriptionProps) => {
             </div>
 
             <div className="container relative z-10 px-0">
-                <div className="w-3/6 lg:pr-8 lg:pt-4">
+                <div className="mx-auto w-[95%] lg:mx-[initial] lg:w-3/6 lg:pr-8 lg:pt-4">
                     <div>
                         <h2 className="text-base font-semibold leading-7 text-accent">{data.subtitle}</h2>
                         <p className="mt-2 text-3xl font-bold tracking-tight text-white text-shadow-hero-header sm:text-4xl">
