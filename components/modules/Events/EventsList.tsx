@@ -26,8 +26,6 @@ const EventsList = ({ className, data }: EventsListProps) => {
         offset: ['start end', 'end end'],
     });
 
-    const scale = useTransform(scrollYProgressIncludingOverlap, [0.1, 0.4, 0.75, 1], [1, 2.5, 4.2, 1]);
-
     const contentOpacity: any = useTransform(scrollYProgress, [0, 1], [0, 1]);
     const contentScale = useTransform(scrollYProgress, (pos) => {
         if (pos < 0.7) return 0;
@@ -53,10 +51,10 @@ const EventsList = ({ className, data }: EventsListProps) => {
                     <p className="subtitle mt-0 xl:mt-4">Join the most purrfect tour!</p>
                 </motion.section>
                 <motion.div
-                    className="container flex h-[40rem] origin-top flex-col justify-between gap-x-4 overflow-y-auto px-0 xl:flex-row"
+                    className="container flex h-screen origin-top flex-col justify-between gap-x-4 overflow-y-auto px-0 lg:h-[40rem] xl:flex-row"
                     style={{ scale: contentScale, opacity: contentOpacity }}
                 >
-                    <div className="hidden w-[22rem] xl:flex">
+                    <div className="hidden w-[22rem] lg:flex">
                         <Image
                             src="/tour.jpg"
                             width={358}
@@ -68,7 +66,7 @@ const EventsList = ({ className, data }: EventsListProps) => {
                     </div>
                     <motion.section
                         style={{ overflowY: listScrollBehavior }}
-                        className="c-scrollbar flex w-80 flex-1 flex-col justify-between scroll-smooth shadow-container-neumorph"
+                        className="c-scrollbar flex w-screen flex-1 flex-col justify-between scroll-smooth shadow-container-neumorph lg:w-80"
                     >
                         <h3 className="sr-only">Current locations on tour</h3>
                         <ul>
