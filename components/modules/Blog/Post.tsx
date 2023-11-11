@@ -18,7 +18,7 @@ const Post = ({ className, data }: PostProps) => {
         <article className={cn('flex flex-col gap-6', className)}>
             <ScrollToTopButton />
             <h1 className="text-3xl font-semibold">{data.title}</h1>
-            <div className="relative aspect-square max-h-[50rem] w-full">
+            <div className="relative aspect-square max-h-[30rem] w-full lg:max-h-[50rem]">
                 <Image src={data.image} alt={data.description} fill />
             </div>
             <div className="portable-text mt-8">
