@@ -24,8 +24,9 @@ const Blog = async () => {
                                 <div className="relative h-60 w-full overflow-hidden lg:h-[30rem]">
                                     <Image
                                         className="transition-transform duration-300 will-change-transform group-hover:scale-105"
-                                        src={post.image}
                                         fill
+                                        src={post.image}
+                                        blurDataURL={post.image}
                                         alt={post.description}
                                         style={{ objectFit: 'contain' }}
                                     />
