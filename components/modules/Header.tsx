@@ -5,7 +5,7 @@ import MobileMenu from '@/components/modules/MobileMenu';
 const Header = async () => {
     const data = await getHeader();
     return (
-        <header className="flex items-center px-4 lg:px-0">
+        <header className="flex items-center ">
             <AnimatedNavLinks className="" links={data.navigation} src={data.logo} />
             <MobileMenu links={data.navigation} imageUrl={data.logo} />
         </header>
