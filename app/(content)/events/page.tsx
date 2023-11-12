@@ -1,10 +1,9 @@
 import { getEvents } from '@/libs/sanity/utils';
-import { WithClassName } from '@/types/UI';
 
 import EventsList from '@/components/modules/Events/EventsList';
 import EventsHero from '@/components/modules/Events/EventsHero';
 
-const EventsPage = async ({ className }: WithClassName) => {
+const EventsPage = async () => {
     const data = await getEvents();
 
     return (

@@ -6,7 +6,7 @@ import BiographyHero from '@/components/modules/Biography/BiographyHero';
 import BiographySkills from '@/components/modules/Biography/BiographySkills';
 import BiographyCarousel from '@/components/modules/Biography/BiographyCarousel';
 
-const Biography = async ({ className }: WithClassName) => {
+const BiographyPage = async () => {
     const data = await getBiography();
 
     const heroData = {
@@ -31,4 +31,4 @@ const Biography = async ({ className }: WithClassName) => {
     );
 };
 
-export default Biography;
+export default BiographyPage;
