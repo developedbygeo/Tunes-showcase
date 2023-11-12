@@ -41,7 +41,7 @@ const BiographyHero = ({ className, data }: BiographyHeroProps) => {
                     </div>
                 </div>
             </section>
-            <section className="container px-4 lg:px-0">
+            <section className="container ">
                 <h2 className="mb-12 text-lg font-semibold">Specializations</h2>
                 <ul className="flex flex-wrap gap-12">
                     {data.specializations.map((spec, index) => (
