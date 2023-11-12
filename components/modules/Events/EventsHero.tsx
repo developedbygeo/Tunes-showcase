@@ -22,11 +22,13 @@ const EventsHero = () => {
             variants={fadeIn('default', 0.2)}
             initial="hidden"
             animate="visible"
-            className="relative flex h-[100vh] transition-all"
+            className="container relative flex h-[100vh] items-center transition-all"
         >
             <motion.div
-                className="fixed left-[60%] top-1/2 w-full lg:left-[43%] lg:w-fit"
-                style={{ scale, position, x: '-50%', y: '-50%' }}
+                // className="fixed left-[60%] top-1/2 w-full lg:left-[43%] lg:w-fit"
+                className="pb-32"
+                // style={{ scale, position, x: '-50%', y: '-50%' }}
+                style={{ scale }}
             >
                 <motion.h3 className="text-5xl font-semibold text-shadow-hero-header">
                     <span className="leading-loose">Are you ready to party with</span>
