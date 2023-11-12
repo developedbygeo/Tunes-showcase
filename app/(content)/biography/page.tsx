@@ -22,10 +22,10 @@ const BiographyPage = async () => {
         <>
             <section>
                 <h2 className="sr-only">Biography</h2>
-                <BiographyHero className="apply-py px-4 lg:px-0" data={heroData} />
-                <BiographySkills className="apply-py px-4 lg:px-0" skills={data.skills} />
-                <BiographyExperience className="apply-py px-4 lg:px-0" experience={data.experiences} />
-                <BiographyCarousel className="apply-py px-4 lg:px-0" education={data.education} />
+                <BiographyHero className="apply-py " data={heroData} />
+                <BiographySkills className="apply-py " skills={data.skills} />
+                <BiographyExperience className="apply-py " experience={data.experiences} />
+                <BiographyCarousel className="apply-py " education={data.education} />
             </section>
         </>
     );

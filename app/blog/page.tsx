@@ -7,7 +7,7 @@ const Blog = async () => {
     const data = await getBlogPosts();
 
     return (
-        <section className="apply-py container px-4 lg:px-0">
+        <section className="apply-py container ">
             <h2 className="text-5xl font-semibold tracking-tight text-white text-shadow-hero-header sm:text-6xl">
                 A deep dive into the world <span className="block text-accent">of DJ Cat Paws.</span>
             </h2>
