@@ -52,7 +52,7 @@ const AlbumsDescription = ({ className, data }: AlbumDescriptionProps) => {
                                         <Image src={feature.icon} alt={feature.title} width={24} height={24} />
                                         <h3 className="font-semibold tracking-tight">{feature.title}</h3>
                                     </dt>
-                                    <dd className="text-light text-base text-gray-300">{feature.description}</dd>
+                                    <dd className="text-base text-gray-300">{feature.description}</dd>
                                 </article>
                             ))}
                         </motion.dl>

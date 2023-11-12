@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
@@ -42,7 +43,7 @@ const AlbumsHero = ({ className }: WithClassName) => {
                     <h2 className="mt-10 whitespace-break-spaces text-5xl font-semibold tracking-tight text-white text-shadow-hero-header lg:whitespace-normal">
                         Curious about <span className="text-accent">DJ Cat Paws</span>&apos; work?
                     </h2>
-                    <p className="text-light mt-6 max-w-[95vw] text-base text-gray-300 lg:max-w-[initial]">
+                    <p className="mt-6 max-w-[95vw] text-base text-gray-300 lg:max-w-[initial]">
                         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit
                         sunt amet fugiat veniam occaecat fugiat aliqua.
                     </p>
