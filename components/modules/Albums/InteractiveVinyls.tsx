@@ -16,7 +16,7 @@ const InteractiveVinyls = ({ className }: WithClassName) => {
             variants={fadeInChildren('default', 0.1, 0.2)}
             initial="hidden"
             whileInView="visible"
-            className={cn('relative h-[60vh] w-[30vw]', className)}
+            className={cn('relative', className)}
         >
             <motion.div
                 variants={fadeInWithRotation('left', 0.45, 360)}
@@ -26,7 +26,7 @@ const InteractiveVinyls = ({ className }: WithClassName) => {
                 whileHover={{ rotate: -VINYL_ROTATION }}
                 transition={{ duration: 50, ease: 'linear', loop: Infinity }}
             >
-                <Vinyl1 className="h-60 w-60 rounded-full shadow-container-neumorph" />
+                <Vinyl1 className="rounded-full shadow-container-neumorph xl:h-40 xl:w-40 2xl:h-60 2xl:w-60" />
             </motion.div>
             <motion.div
                 variants={fadeInWithRotation('left', 0.65, 180)}
@@ -36,7 +36,7 @@ const InteractiveVinyls = ({ className }: WithClassName) => {
                 whileHover={{ rotate: VINYL_ROTATION }}
                 transition={{ duration: 35, ease: 'linear', loop: Infinity }}
             >
-                <Vinyl2 className="h-60 w-60 rounded-full shadow-container-neumorph" />
+                <Vinyl2 className="rounded-full shadow-container-neumorph xl:h-40 xl:w-40 2xl:h-60 2xl:w-60" />
             </motion.div>
             <motion.div
                 variants={fadeInWithRotation('left', 0.79, 55)}
@@ -46,7 +46,7 @@ const InteractiveVinyls = ({ className }: WithClassName) => {
                 whileHover={{ rotate: -VINYL_ROTATION }}
                 transition={{ duration: 22, ease: 'linear', loop: Infinity }}
             >
-                <Vinyl3 className="h-60 w-60 rounded-full shadow-container-neumorph" />
+                <Vinyl3 className="rounded-full shadow-container-neumorph xl:h-40 xl:w-40 2xl:h-60 2xl:w-60" />
             </motion.div>
         </motion.div>
     );
