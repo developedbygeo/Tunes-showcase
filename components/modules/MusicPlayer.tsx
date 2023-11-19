@@ -7,6 +7,7 @@ import AudioPlayer from 'react-h5-audio-player';
 import { fadeIn } from '@/libs/animations';
 import { WithClassName, WithSource } from '@/types/UI';
 import { cn } from '@/libs/ui';
+import useIsMobile from '@/hooks/useIsMobile';
 
 type PlayerProps = WithClassName &
     WithSource & {
@@ -14,6 +15,7 @@ type PlayerProps = WithClassName &
     };
 
 const Player = ({ className, src, trackImageSrc }: PlayerProps) => {
+    const isMobile = useIsMobile();
     return (
         <>
             <motion.section
@@ -34,14 +36,14 @@ const Player = ({ className, src, trackImageSrc }: PlayerProps) => {
                             <p className="text-sm font-light">Weekend</p>
                         </article>
                     </div>
-                    <div className="bg-gradient-container shadow-container-neumorph-sm w-full max-w-4xl px-6 py-2">
+                    <div className="w-full max-w-4xl bg-gradient-container px-6 py-2 shadow-container-neumorph-sm">
                         <AudioPlayer
                             src={src}
                             showSkipControls={false}
                             showJumpControls={false}
                             timeFormat="mm:ss"
                             showFilledVolume
-                            layout="horizontal"
+                            layout={isMobile ? 'stacked' : 'horizontal'}
                             className="w-80"
                             style={{
                                 width: '100%',
