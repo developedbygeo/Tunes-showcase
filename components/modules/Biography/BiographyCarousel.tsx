@@ -37,7 +37,7 @@ const BiographyCarousel = ({ className, education }: CarouselProps) => {
         <motion.div className={cn('container relative flex flex-col items-start justify-center', className)}>
             <h2 className="mb-12 text-lg font-semibold">Education & Festivals</h2>
 
-            <div className="container relative h-[50rem] lg:h-[60rem]">
+            <div className="relative h-[50rem] w-full lg:h-[60rem]">
                 <AnimatePresence initial={false} custom={direction}>
                     <motion.div
                         key={education[imageIndex]._key}
@@ -62,6 +62,7 @@ const BiographyCarousel = ({ className, education }: CarouselProps) => {
                         <Image
                             fill
                             priority
+                            placeholder="blur"
                             blurDataURL={education[imageIndex].image}
                             alt="Party"
                             className="pointer-events-none"
@@ -89,14 +90,14 @@ const BiographyCarousel = ({ className, education }: CarouselProps) => {
                 </AnimatePresence>
                 <Button
                     variant="ghost"
-                    className="absolute bottom-[10rem] right-12 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white lg:top-1/2"
+                    className="absolute bottom-[10rem] right-0 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white lg:right-12 lg:top-1/2"
                     onClick={() => paginate(1)}
                 >
                     <MdKeyboardArrowRight className="h-6 w-6 text-black" />
                 </Button>
                 <Button
                     variant="ghost"
-                    className="absolute bottom-[10rem] left-12 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white lg:top-1/2"
+                    className="absolute bottom-[10rem] left-0 z-30 !h-12 !w-12 rounded-full bg-white/30 !p-0 backdrop-blur-3xl hover:bg-white lg:left-12 lg:top-1/2"
                     onClick={() => paginate(-1)}
                 >
                     <MdKeyboardArrowLeft className="h-6 w-6 text-black" />
