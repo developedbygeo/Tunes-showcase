@@ -13,7 +13,6 @@ const EventsHero = () => {
 
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.7]);
-    const position = useTransform(scrollYProgress, (pos) => (pos === 1 ? 'relative' : 'fixed'));
 
     return (
         <motion.section
@@ -22,22 +21,16 @@ const EventsHero = () => {
             variants={fadeIn('default', 0.2)}
             initial="hidden"
             animate="visible"
-            className="container relative flex h-[100vh] items-center transition-all"
+            className="container relative flex h-screen items-center transition-all"
         >
-            <motion.div
-                // className="fixed left-[60%] top-1/2 w-full lg:left-[43%] lg:w-fit"
-                className="pb-32"
-                // style={{ scale, position, x: '-50%', y: '-50%' }}
-                style={{ scale }}
-            >
+            <motion.div className="pb-32" style={{ scale }}>
                 <motion.h3 className="text-5xl font-semibold text-shadow-hero-header">
                     <span className="leading-loose">Are you ready to party with</span>
                     <div>
-                        <span className="text-accent"> DJ Cat Paws</span>
-                        <span>?</span>
+                        <span className="text-accent"> DJ Cat Paws</span> <span> ?</span>
                     </div>
                 </motion.h3>
-                <p className="mt-6 hidden w-4/5 text-base text-gray-300 lg:block">
+                <p className="mt-6 hidden w-4/5 text-base text-gray-300 lg:block xl:w-3/5">
                     Step into the fantastical world of DJ Cat Paws, where every beat is purr-fectly curated to whisk you
                     into a frenzy of feline fun. With a scratch of the deck and a meow into the mic. Are you ready to
                     pounce on the dance floor with DJ Cat Paws? Your whiskered maestro awaits!
