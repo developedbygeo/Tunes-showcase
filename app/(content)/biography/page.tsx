@@ -1,10 +1,15 @@
 import { getBiography } from '@/libs/sanity/utils';
-import { WithClassName } from '@/types/UI';
+import { Metadata } from 'next';
 
 import BiographyExperience from '@/components/modules/Biography/BiographyExperience';
 import BiographyHero from '@/components/modules/Biography/BiographyHero';
 import BiographySkills from '@/components/modules/Biography/BiographySkills';
 import BiographyCarousel from '@/components/modules/Biography/BiographyCarousel';
+
+export const metadata: Metadata = {
+    title: 'DJ Cat Paws - Biography',
+    description: 'Find out more about DJ Cat Paws and his life, his skills, and his experiences.',
+};
 
 const BiographyPage = async () => {
     const data = await getBiography();

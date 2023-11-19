@@ -1,7 +1,14 @@
+import { Metadata } from 'next';
+
 import { getEvents } from '@/libs/sanity/utils';
 
 import EventsList from '@/components/modules/Events/EventsList';
 import EventsHero from '@/components/modules/Events/EventsHero';
+
+export const metadata: Metadata = {
+    title: 'DJ Cat Paws - Events',
+    description: 'Looking for the next event DJ Cat Paws will be playing at? Find out here.',
+};
 
 const EventsPage = async () => {
     const data = await getEvents();
