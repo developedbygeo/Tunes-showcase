@@ -1,5 +1,7 @@
+import { update } from '@/libs/server';
 import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
 const WEBHOOK_SECRET = process.env.SANITY_WEBHOOK_SECRET as string;
 
@@ -15,17 +17,30 @@ const readBody = async (readable: NodeJS.ReadableStream) => {
     return Buffer.concat(chunks).toString('utf8');
 };
 
-const POST = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
-    const signature = req.headers[SIGNATURE_HEADER_NAME] as string;
-    const body = await readBody(req); // Read the body into a string
+export const POST = async (req: NextRequest, res: NextResponse<Data>) => {
+    // const signature = req.headers[SIGNATURE_HEADER_NAME] as string;
+    const signature = req.headers.get(SIGNATURE_HEADER_NAME);
+
+    if (!req.body || !signature) return;
+
+    const body = await req.text(); // Read the body into a string
 
     if (req.method !== 'POST') {
-        return res.status(401).json({ message: 'Must be a POST request' });
+        return new Response(JSON.stringify({ message: 'Must be a POST request' }), {
+            status: 401,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
     }
 
     if (!isValidSignature(body, signature, WEBHOOK_SECRET)) {
-        res.status(401).json({ message: 'Invalid signature' });
-        return;
+        return new Response(JSON.stringify({ message: 'Invalid signature' }), {
+            status: 401,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
     }
 
     try {
@@ -33,14 +48,27 @@ const POST = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
         switch (type) {
             case 'blogPost':
-                await res.revalidate(`/blog/${slug.current}`);
-                await res.revalidate(`/blog`);
+                update([`/blog/${slug.current}`, '/blog']);
+
+                return new Response(JSON.stringify({ success: true }), {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
         }
 
-        return res.json({ message: 'No managed type' });
+        return new Response(JSON.stringify({ message: 'No managed types' }), {
+            status: 401,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
     } catch (err) {
-        return res.status(500).send({ message: 'Error revalidating' });
+        return new Response(JSON.stringify({ message: 'Error revalidating' }), {
+            status: 500,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
     }
 };
-
-export default POST;
