@@ -1,10 +1,13 @@
 # Tunes Showcase
 
-<!-- <div style="display: flex">
-<img src='./public/sample-v.png' height='450px' width='200px' alt='mobile viewport - portrait mode'/>&nbsp;&nbsp;
-&nbsp;&nbsp;<img style="align-self: center" src='./public/sample-h.png' height='350px' width='500px'alt='tablet viewport - landscape mode'/>
-</div> -->
-
+<div style="display: flex flex-direction: column">
+<img src='./public/sample-desktop.png' alt='desktop viewport - homepage'/>&nbsp;&nbsp;
+&nbsp;&nbsp;
+<div style="display: flex; gap:20px">
+<img style="align-self: center" src='./public/sample-mobile.png' height='auto' width='50%'alt='tablet viewport - landscape mode'/>
+<img style="align-self: center" src='./public/sample-mobile2.png' height='auto' width='50%'alt='tablet viewport - landscape mode'/>
+</div>
+</div>
 <br>
 <br>
 
@@ -38,6 +41,8 @@ npm run dev
 
 ## <a id='features'></a>Features
 
+-   ISR
+-   GROQ webhook for on-demand revalidation
 -   Content Management (Sanity)
 -   Custom desk setup and icons
 -   Background & scroll animations
