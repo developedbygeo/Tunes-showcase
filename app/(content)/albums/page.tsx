@@ -7,9 +7,9 @@ const Albums = async () => {
 
     return (
         <>
-            <div className="min-h-screen">
-                <AlbumsHero className="apply-pb min-h-screen" />
-                <AlbumsDescription data={albumDescriptionData} className="apply-py" />
+            <div>
+                <AlbumsHero />
+                <AlbumsDescription data={albumDescriptionData} className="apply-pt" />
             </div>
         </>
     );
