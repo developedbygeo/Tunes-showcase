@@ -43,6 +43,7 @@ npm run dev
 
 -   ISR
 -   GROQ webhook for on-demand revalidation
+-   Metadata API SEO
 -   Content Management (Sanity)
 -   Custom desk setup and icons
 -   Background & scroll animations
