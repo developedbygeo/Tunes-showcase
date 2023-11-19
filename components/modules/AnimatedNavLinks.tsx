@@ -30,7 +30,10 @@ const AnimatedNavLinks = ({ className, src, links, quote }: AnimatedHeaderProps)
             animate={isInView ? 'visible' : 'hidden'}
             whileInView="visible"
             viewport={{ once: true }}
-            className={cn('container flex items-center justify-between px-4 py-4 lg:px-0', className)}
+            className={cn(
+                'flex flex-col items-center justify-between py-4 lg:container lg:flex-row lg:px-0',
+                className
+            )}
         >
             <div className="flex items-center gap-6">
                 <motion.div
@@ -43,7 +46,7 @@ const AnimatedNavLinks = ({ className, src, links, quote }: AnimatedHeaderProps)
                         <Image src={src} className="rounded-full" alt="logo" fill style={{ objectFit: 'contain' }} />
                     </Link>
                 </motion.div>
-                {quote && <p className="text-sm font-light text-gray-400">{quote}</p>}
+                {quote && <p className="text-xs font-light text-gray-400 lg:text-sm">{quote}</p>}
             </div>
 
             {/* desktop */}
