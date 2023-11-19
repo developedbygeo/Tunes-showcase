@@ -5,13 +5,6 @@ type Data = {
     message: string;
 };
 
-// Next.js will by default parse the body, which can lead to invalid signatures
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
-
 const secret = process.env.SANITY_WEBHOOK_SECRET as string;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
