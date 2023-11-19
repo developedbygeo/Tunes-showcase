@@ -1,13 +1,21 @@
 import { isValidSignature, SIGNATURE_HEADER_NAME } from '@sanity/webhook';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+const WEBHOOK_SECRET = process.env.SANITY_WEBHOOK_SECRET as string;
+
 type Data = {
     message: string;
 };
 
-const secret = process.env.SANITY_WEBHOOK_SECRET as string;
+const readBody = async (readable: NodeJS.ReadableStream) => {
+    const chunks = [];
+    for await (const chunk of readable) {
+        chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk);
+    }
+    return Buffer.concat(chunks).toString('utf8');
+};
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+const POST = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const signature = req.headers[SIGNATURE_HEADER_NAME] as string;
     const body = await readBody(req); // Read the body into a string
 
@@ -15,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         return res.status(401).json({ message: 'Must be a POST request' });
     }
 
-    if (!isValidSignature(body, signature, secret)) {
+    if (!isValidSignature(body, signature, WEBHOOK_SECRET)) {
         res.status(401).json({ message: 'Invalid signature' });
         return;
     }
@@ -33,12 +41,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     } catch (err) {
         return res.status(500).send({ message: 'Error revalidating' });
     }
-}
+};
 
-async function readBody(readable: NodeJS.ReadableStream) {
-    const chunks = [];
-    for await (const chunk of readable) {
-        chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk);
-    }
-    return Buffer.concat(chunks).toString('utf8');
-}
+export default POST;
