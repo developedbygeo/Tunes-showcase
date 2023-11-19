@@ -15,7 +15,7 @@ const Blog = async () => {
                 Here you can find all the latest news about DJ Cat Paws. From new releases to upcoming events, our cat
                 DJ writes about it all.
             </p>
-            <ul className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
+            <ul className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
                 {data.map((post) => {
                     const publishedDate = parseDate(post.publishedAt);
                     return (
