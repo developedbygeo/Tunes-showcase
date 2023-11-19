@@ -1,7 +1,14 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+
 import { parseDate } from '@/libs/data';
 import { getBlogPosts } from '@/libs/sanity/utils';
-import Image from 'next/image';
-import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: 'DJ Cat Paws - Blog',
+    description: 'Your favorite cat DJ writes about his life and his experiences.',
+};
 
 const Blog = async () => {
     const data = await getBlogPosts();
