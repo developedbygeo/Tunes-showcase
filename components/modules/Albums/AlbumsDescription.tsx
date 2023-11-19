@@ -18,7 +18,10 @@ const AlbumsDescription = ({ className, data }: AlbumDescriptionProps) => {
     const isInView = useInView(ref);
 
     return (
-        <section className={cn('relative flex flex-col gap-12 overflow-hidden px-0 py-24 sm:my-32', className)}>
+        <section
+            id="music-description"
+            className={cn('relative flex flex-col gap-12 overflow-hidden scroll-smooth px-0 py-24 sm:my-32', className)}
+        >
             <div className="group relative h-[50vh] w-full lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-2/5">
                 <Image
                     src={data.horizontalImg}
