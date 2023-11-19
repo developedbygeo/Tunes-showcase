@@ -15,4 +15,6 @@ const Albums = async () => {
     );
 };
 
+export const revalidate = 18_000_000;
+
 export default Albums;
