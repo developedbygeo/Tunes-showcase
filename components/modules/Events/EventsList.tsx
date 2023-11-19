@@ -21,10 +21,6 @@ const EventsList = ({ className, data }: EventsListProps) => {
         target: targetRef,
         offset: ['start end', 'end end'],
     });
-    const { scrollYProgress: scrollYProgressIncludingOverlap } = useScroll({
-        target: extendedRef,
-        offset: ['start end', 'end end'],
-    });
 
     const contentOpacity: any = useTransform(scrollYProgress, [0, 1], [0, 1]);
     const contentScale = useTransform(scrollYProgress, (pos) => {
@@ -42,14 +38,14 @@ const EventsList = ({ className, data }: EventsListProps) => {
                 ref={targetRef}
                 className="relative z-10 mt-[-30vh] flex h-[95vh] flex-col items-center justify-center py-20"
             >
-                <motion.section
+                <motion.article
                     ref={extendedRef}
-                    className="container mb-8 text-center"
+                    className="container mb-8 border-b border-b-gray-600/20 pb-8 text-center lg:border-b-0"
                     style={{ scale: contentScale, opacity: contentOpacity }}
                 >
                     <h2 className="big-title text-shadow-hero-header">World Tour Alert</h2>
                     <p className="subtitle mt-0 xl:mt-4">Join the most purrfect tour!</p>
-                </motion.section>
+                </motion.article>
                 <motion.div
                     className="container flex h-screen origin-top flex-col justify-between gap-x-4 overflow-y-auto px-0 lg:h-[40rem] xl:flex-row"
                     style={{ scale: contentScale, opacity: contentOpacity }}
