@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import debounce from 'lodash/debounce';
+import { isClient } from '@/libs/ui';
 
 const useIsMobile = (maxWidth = 768) => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < maxWidth);
+    const isClientSide = isClient();
+    const [isMobile, setIsMobile] = useState(isClientSide ? window.innerWidth < maxWidth : false);
 
     useEffect(() => {
         const handleResize = debounce(() => {
