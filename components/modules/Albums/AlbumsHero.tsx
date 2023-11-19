@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/Button';
 
 import { fadeIn } from '@/libs/animations';
 import { cn } from '@/libs/ui';
+import Link from 'next/link';
 
 const AlbumsHero = ({ className }: WithClassName) => {
     const target = useRef<HTMLDivElement>(null);
@@ -31,14 +32,14 @@ const AlbumsHero = ({ className }: WithClassName) => {
     return (
         <div
             ref={target}
-            className="relative isolate overflow-hidden bg-transparent px-4 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_1rem)_var(--y,_1rem),_#7987FF_0%,_transparent_100%)] before:opacity-40 lg:px-0"
+            className="relative isolate flex min-h-[85vh] items-center overflow-hidden bg-transparent px-4 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_1rem)_var(--y,_1rem),_#7987FF_0%,_transparent_100%)] before:opacity-40 lg:block lg:min-h-screen lg:px-0"
         >
-            <div className={cn('apply-pt apply-pb container flex items-center justify-between', className)}>
+            <div className={cn('flex items-center justify-between lg:container lg:py-14 xl:py-28', className)}>
                 <motion.div
                     variants={fadeIn('default', 0.3)}
                     initial="hidden"
                     animate="visible"
-                    className="mx-auto flex max-w-[95vw] flex-shrink-0 flex-col items-start lg:mx-0 lg:max-w-xl lg:pt-8"
+                    className="mx-auto flex max-w-[95vw] flex-shrink-0 flex-col items-start md:w-5/6 lg:mx-0 lg:w-full lg:max-w-xl lg:pt-8"
                 >
                     <h2 className="mt-10 whitespace-break-spaces text-5xl font-semibold tracking-tight text-white text-shadow-hero-header lg:whitespace-normal">
                         Curious about <span className="text-accent">DJ Cat Paws</span>&apos; work?
@@ -48,10 +49,12 @@ const AlbumsHero = ({ className }: WithClassName) => {
                         sunt amet fugiat veniam occaecat fugiat aliqua.
                     </p>
                     <Button size="lg" className="mt-10 w-[95%] lg:w-fit">
-                        <span>Learn more</span>
+                        <Link href="#music-description">
+                            <span>Learn more</span>
+                        </Link>
                     </Button>
                 </motion.div>
-                <InteractiveVinyls className="hidden lg:block" />
+                <InteractiveVinyls className="hidden h-[60vh] w-[30vw] lg:block" />
             </div>
         </div>
     );
